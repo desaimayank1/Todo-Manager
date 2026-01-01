@@ -6,9 +6,16 @@ import taskRouter from "./routes/tasks";
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
+const CLIENT_API = process.env.CLIENT_URL || 3000;
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: `${CLIENT_API}`,
+  methods: ["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
+  allowedHeaders: ["Content-Type","Authorization"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.get("/", async (req: Request, res: Response) => {
