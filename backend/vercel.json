@@ -1,10 +1,6 @@
 {
-  "functions": {
-    "api/index.ts": {
-      "runtime": "nodejs20.x"
-    }
-  },
+  "version": 3,
   "routes": [
-    { "src": "/(.*)", "dest": "/index" }
+    { "src": "/(.*)", "dest": "/api/index" }
   ]
 }
